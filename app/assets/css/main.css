@@ -13,7 +13,7 @@
   --color-bg-surface: #ffffff;
   --color-bg-surface-hover: #f4f4f5;
   
-  --color-border-subtle: #e4e4e7;
+  --color-border-subtle: #d4d4d8;
   
   --color-text-primary: #09090b;
   --color-text-secondary: #3f3f46;
@@ -50,33 +50,46 @@ html, body {
 }
 
 .btn-primary {
-  @apply bg-primary text-white border-primary hover:bg-white hover:text-primary;
+  @apply bg-primary text-white border-primary hover:bg-white hover:text-primary focus-visible:bg-white focus-visible:text-primary;
 }
 
 .btn-secondary {
-  @apply bg-secondary text-white border-secondary hover:bg-white hover:text-secondary;
+  @apply bg-secondary text-white border-secondary hover:bg-white hover:text-secondary focus-visible:bg-white focus-visible:text-secondary;
 }
 
 .btn-outline {
-  @apply border-2 border-border-subtle bg-transparent text-text-secondary hover:bg-bg-surface-hover hover:border-text-primary hover:text-text-primary;
+  @apply border-2 border-border-subtle bg-transparent text-text-secondary hover:bg-bg-surface-hover hover:border-text-primary hover:text-text-primary focus-visible:bg-bg-surface-hover focus-visible:border-text-primary focus-visible:text-text-primary;
 }
 
 .btn-ghost {
-  @apply bg-transparent text-text-secondary hover:bg-bg-surface-hover hover:text-text-primary;
+  @apply bg-transparent text-text-secondary hover:bg-bg-surface-hover hover:text-text-primary focus-visible:bg-bg-surface-hover focus-visible:text-text-primary;
 }
 
 .btn-danger {
-  @apply bg-accent text-white border-accent hover:bg-white hover:text-accent;
+  @apply bg-accent text-white border-accent hover:bg-white hover:text-accent focus-visible:bg-white focus-visible:text-accent;
 }
 
 .card,
 .card-interactive {
   @apply bg-bg-surface border-border-subtle rounded-2xl p-6 transition-colors duration-200;
-  border-width: 1.5px;
+  border-width: 2px;
 }
 
 .card-interactive {
   @apply hover:border-primary cursor-pointer;
+}
+
+.squircle {
+  clip-path: polygon(
+    100% 50%, 99.6% 73.7%, 98.4% 82.8%, 96.4% 88.9%, 93.5% 93.5%,
+    88.9% 96.4%, 82.8% 98.4%, 73.7% 99.6%, 50% 100%,
+    26.3% 99.6%, 17.2% 98.4%, 11.1% 96.4%, 6.5% 93.5%,
+    3.6% 88.9%, 1.6% 82.8%, 0.4% 73.7%, 0% 50%,
+    0.4% 26.3%, 1.6% 17.2%, 3.6% 11.1%, 6.5% 6.5%,
+    11.1% 3.6%, 17.2% 1.6%, 26.3% 0.4%, 50% 0%,
+    73.7% 0.4%, 82.8% 1.6%, 88.9% 3.6%, 93.5% 6.5%,
+    96.4% 11.1%, 98.4% 17.2%, 99.6% 26.3%
+  );
 }
 
 ::-webkit-scrollbar {
