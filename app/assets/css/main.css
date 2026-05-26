@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+/* Qui possiamo aggiungere custom utility o variabili per il nostro design system minimale */
+:root {
+  --color-primary: #111111;
+  --color-secondary: #666666;
+  --color-background: #ffffff;
+  --color-card: #f9f9f9;
+  --color-border: #e5e5e5;
+  --color-accent: #3b82f6; /* Blu elegante per evidenziazioni */
+  --color-highlight: #fef08a; /* Giallo chiaro per evidenziare le parole trovate nel testo */
+  --color-suggestion: #f0fdf4; /* Verde chiaro per i tooltip di suggerimento */
+  --color-suggestion-border: #bbf7d0;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  font-family: 'Inter', sans-serif;
+}
