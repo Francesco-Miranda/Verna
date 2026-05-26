@@ -1,20 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @import "tailwindcss";
 
-/* Qui possiamo aggiungere custom utility o variabili per il nostro design system minimale */
-:root {
-  --color-primary: #111111;
-  --color-secondary: #666666;
-  --color-background: #ffffff;
-  --color-card: #f9f9f9;
-  --color-border: #e5e5e5;
-  --color-accent: #3b82f6; /* Blu elegante per evidenziazioni */
-  --color-highlight: #fef08a; /* Giallo chiaro per evidenziare le parole trovate nel testo */
-  --color-suggestion: #f0fdf4; /* Verde chiaro per i tooltip di suggerimento */
-  --color-suggestion-border: #bbf7d0;
+@theme {
+  --font-sans: "Poppins", "Inter", system-ui, -apple-system, sans-serif;
+
+  --color-primary: #09090b;
+  --color-secondary: #2563eb;
+  --color-accent: #dc2626;
+  
+  --color-bg-base: #fafafa;
+  --color-bg-surface: #ffffff;
+  --color-bg-surface-hover: #f4f4f5;
+  
+  --color-border-subtle: #e4e4e7;
+  
+  --color-text-primary: #09090b;
+  --color-text-secondary: #3f3f46;
+  --color-text-muted: #71717a;
 }
 
-body {
-  background-color: var(--color-background);
-  color: var(--color-primary);
-  font-family: 'Inter', sans-serif;
+html, body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-outline,
+.btn-ghost,
+.btn-danger {
+  @apply inline-flex items-center justify-center font-medium rounded-full transition-colors duration-200 focus:outline-none disabled:opacity-50 disabled:pointer-events-none cursor-pointer border-2 border-transparent;
+}
+
+.btn-sm {
+  @apply px-4 py-1.5 text-xs;
+}
+
+.btn-md {
+  @apply px-5 py-2.5 text-sm;
+}
+
+.btn-lg {
+  @apply px-7 py-3.5 text-base;
+}
+
+.btn-primary {
+  @apply bg-primary text-white border-primary hover:bg-white hover:text-primary;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white border-secondary hover:bg-white hover:text-secondary;
+}
+
+.btn-outline {
+  @apply border-2 border-border-subtle bg-transparent text-text-secondary hover:bg-bg-surface-hover hover:border-text-primary hover:text-text-primary;
+}
+
+.btn-ghost {
+  @apply bg-transparent text-text-secondary hover:bg-bg-surface-hover hover:text-text-primary;
+}
+
+.btn-danger {
+  @apply bg-accent text-white border-accent hover:bg-white hover:text-accent;
+}
+
+.card,
+.card-interactive {
+  @apply bg-bg-surface border-border-subtle rounded-2xl p-6 transition-colors duration-200;
+  border-width: 1.5px;
+}
+
+.card-interactive {
+  @apply hover:border-primary cursor-pointer;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 9999px;
+  border: 2px solid var(--color-bg-base);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #27272a;
 }
